@@ -75,7 +75,7 @@ app.use("/posts", postController)
 app.use("/likes", likeController)
 app.use("/comments", commentController)
 
-app.listen(5000, async function () {
+app.listen(process.env.PORT || 5000, async function () {
   await connect()
   console.log("listening on port 5000")
 })

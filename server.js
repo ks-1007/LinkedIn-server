@@ -51,9 +51,13 @@ app.get(
     // console.log(req.user)
     const user = await User.find({ email: req.user._json.email }).lean().exec()
     if (user.length > 0) {
-      res.redirect(`http://localhost:3000/profile/${req.user._json.email}`)
+      res.redirect(
+        `https://linkedin-clone-sigma.vercel.app/profile/${req.user._json.email}`
+      )
     } else {
-      res.redirect(`http://localhost:3000/create-user/${req.user._json.email}`)
+      res.redirect(
+        `https://linkedin-clone-sigma.vercel.app/create-user/${req.user._json.email}`
+      )
     }
   }
 )
